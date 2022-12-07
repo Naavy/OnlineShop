@@ -6,12 +6,12 @@ import cartIcon from '../../images/shopping-cart.png'
 import './Navigation.scss'
 
 const NavigationMobile = () => {
-  const { showShopCart, setShowShopCart } = useContext(OnlineShopContext)
+  const { setShowShopCart } = useContext(OnlineShopContext)
 
   return (
     <div className='navigationMobile'>
       <div className='navigationMobile__buttons'>
-        <button className={'icon__buttonCart'} onClick={() => { setShowShopCart(true); console.log(showShopCart) }}><img src={cartIcon} alt='cart-icon' className='icon__image' /></button>
+        <button className={'icon__buttonCart'} onClick={() => setShowShopCart(true)}><img src={cartIcon} alt='cart-icon' className='icon__image' /></button>
         <button className={'icon__button'} onClick={() => { }}><img src={langIcon} alt='language-icon' className='icon__image' /></button>
       </div>
       <div className='navigation__links'>
