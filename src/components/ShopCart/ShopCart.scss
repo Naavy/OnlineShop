@@ -1,0 +1,32 @@
+@import 'src/variables.scss';
+
+.backdrop {
+  position: absolute;
+  z-index: 2;
+  background-color: $backdrop;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  border: 1px solid $navigation-bg;
+  background-color: $product-card;
+  padding: 20px;
+  border-radius: 10px;
+  color: $font-color;
+
+  &__button {
+    margin-top: 20px;
+    border: none;
+    background-color: $navigation-bg;
+    padding: 10px;
+    border-radius: 5px;
+    color: $font-color;
+  }
+}

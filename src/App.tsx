@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import { OnlineShopContextProvider } from './context/OnlineShopContext'
+import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+import LoginForm from './components/LoginForm/LoginForm'
+import MainPage from './components/MainPage/MainPage'
+import Navigation from './components/Navigation/Navigation'
+import StationaryStores from './components/StationaryStores/StationaryStores'
+import ProductsList from './components/ProductsList/ProductsList'
+import './App.scss'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <OnlineShopContextProvider>
+      <Navigation />
+      <div className='page'>
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/stationary-stores' element={<StationaryStores />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<LoginForm />} />
+          <Route path='/products' element={<ProductsList />} />
+        </Routes>
+      </div>
+    </OnlineShopContextProvider>
   );
 }
 
-export default App;
+export default App

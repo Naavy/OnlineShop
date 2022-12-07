@@ -1,0 +1,90 @@
+@import 'src/variables.scss';
+
+.navigation {
+  background-color: $navigation-bg;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  color: $font-color;
+  padding: 10px;
+
+  @media (max-width: $desktop) {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  &__title {
+    padding: 0 5%;
+    text-decoration: none;
+    color: $font-color;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    font-size: 1rem;
+
+    a {
+      text-decoration: none;
+      color: $font-color;
+    }
+
+    &--logout {
+      background-color: transparent;
+      border: none;
+      font-size: 1rem;
+      color: $font-color;
+      cursor: pointer;
+    }
+
+    @media (max-width: $desktop) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      a {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    background-color: $badge;
+    padding: 2px 7px;
+    border-radius: 50%;
+  }
+
+  .icon {
+    &__button,
+    &__buttonCart {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__image {
+      width: 2rem;
+    }
+
+    &__buttonCart {
+      position: relative;
+      margin-right: 10px;
+    }
+  } 
+}
+
+.navigationMobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top: 58px;
+  background-color: $navigation-bg;
+  padding: 10px;
+  height: 100vh;
+}
